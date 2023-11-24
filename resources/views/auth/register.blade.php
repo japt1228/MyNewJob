@@ -27,7 +27,7 @@
             >
                 <option value="">-- Selecciona un Rol --</option>
                 <option value="1">Aspirante</option>
-                <option value="2">Empresa</option>
+                <option value="2">Compañia</option>
             </select>
         </div>
 

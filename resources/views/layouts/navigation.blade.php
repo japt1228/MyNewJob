@@ -13,7 +13,7 @@
                 <!-- Navigation Links -->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-nav-link :href="route('Vacancies.index')" :active="request()->routeIs('Vacancies.index')">
-                        {{ __('Dashboard') }}
+                        {{ __('Mis Vacantes') }}
                     </x-nav-link>
                     <x-nav-link :href="route('Vacancies.create')" :active="request()->routeIs('Vacancies.create')">
                         {{ __('Crear Vacante') }}
