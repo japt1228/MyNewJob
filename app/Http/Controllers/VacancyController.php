@@ -24,9 +24,10 @@ class VacancyController extends Controller
 
     }
 
-    public function edit(Vacancy $vacante){
+    public function edit(Vacancy $vacancy){
+        
         return view('Vacancies.edit', [
-            'vacantes' => $vacante
+             'vacancy' => $vacancy
         ]);
     }
 

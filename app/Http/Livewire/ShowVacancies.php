@@ -9,10 +9,10 @@ class ShowVacancies extends Component
 {
     public function render()
     {
-        $vacantes = Vacancy::where("user_id", auth()->user()->id)->paginate(10);
+        $vacancies = Vacancy::where("user_id", auth()->user()->id)->paginate(10);
         
         return view('livewire.show-vacancies', [
-            'vacancies' => $vacantes
+            'vacancies' => $vacancies
         ]);
     }
 }
