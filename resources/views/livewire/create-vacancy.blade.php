@@ -1,19 +1,52 @@
 <form  class="md:w-1/2 space-y-5" action="">
     <div>
+        <x-input-label for="company" :value="__('Company')" />
+        <x-text-input
+        id="company" 
+        class="block mt-1 w-full" 
+        type="text" 
+        wire:model="company" :value="old('company')" 
+        placeholder="Companie's name"
+        />
+    </div>
+    <div>
         <x-input-label for="title" :value="__('Vacancy Title')" />
         <x-text-input
         id="title" 
         class="block mt-1 w-full" 
         type="text" 
-        name="title" :value="old('title')" 
+        wire:model="title" :value="old('title')" 
         placeholder="Vacancy Title"
         />
+        @error('title')
+            <p class=" bg-red-500 text-white my-2 rounded-lg p-2 text-center">{{ $message }}</p>
+        @enderror 
     </div>
+    <div>
+        <x-input-label for="description" :value="__('Description')" />
+        <textarea 
+        wire:model="description" 
+        placeholder="Job's description"
+        class="rounded-md shadow-sm border-gray-200 focus:border-indigo-200 
+        focus:ring  focus:ring-indigo-200 focus:ring-opacity-50 w-full h-70"
+        ></textarea>
+    </div>
+    <div>
+        <x-input-label for="location" :value="__('Location')" />
+        <x-text-input
+        id="location" 
+        class="block mt-1 w-full" 
+        type="text" 
+        wire:model="location" :value="old('location')" 
+        placeholder="location"
+        />
+    </div>
+    
     <div>
         <x-input-label for="salary" :value="__('Salary')" />
         <select
         id="salary"  
-        name="salary"  
+        wire:model="salary"  
         
         class="rounded-md shadow-sm border-gray-200 focus:border-indigo-200 
         focus:ring  focus:ring-indigo-200 focus:ring-opacity-50 w-full"
@@ -28,7 +61,7 @@
         <x-input-label for="category" :value="__('Category')" />
         <select
         id="category"  
-        name="category"  
+        wire:model="category"  
         class="rounded-md shadow-sm border-gray-200 focus:border-indigo-200 
         focus:ring  focus:ring-indigo-200 focus:ring-opacity-50 w-full"
         >
@@ -38,45 +71,29 @@
         @endforeach
         </select>
     </div>
+    
     <div>
-        <x-input-label for="company" :value="__('Company')" />
+        <x-input-label for="postDate" :value="__('Post Date')" />
         <x-text-input
-        id="company" 
-        class="block mt-1 w-full" 
-        type="text" 
-        name="company" :value="old('company')" 
-        placeholder="Companie's name"
-        />
-    </div>
-    <div>
-        <x-input-label for="apply-before" :value="__('Apply before')" />
-        <x-text-input
-        id="apply-before" 
+        id="applyBefore" 
         class="block mt-1 w-full" 
         type="date" 
-        name="apply-before" :value="old('apply-before')" 
+        wire:model="postDate" :value="old('postDate')" 
         
         />
     </div>
     <div>
-        <x-input-label for="description" :value="__('Description')" />
-        <textarea 
-        name="description" 
-        placeholder="Job's description"
-        class="rounded-md shadow-sm border-gray-200 focus:border-indigo-200 
-        focus:ring  focus:ring-indigo-200 focus:ring-opacity-50 w-full h-70"
-        ></textarea>
-    </div>
-    <div>
-        <x-input-label for="location" :value="__('Location')" />
+        <x-input-label for="typePosition" :value="__('Type Position')" />
         <x-text-input
-        id="location" 
+        id="typePosition" 
         class="block mt-1 w-full" 
         type="text" 
-        name="location" :value="old('location')" 
-        placeholder="location"
+        wire:model="typePosition" :value="old('typePosition')" 
+        placeholder="Type Ej. Remote or On Site"
         />
     </div>
+    
+    
     <x-primary-button>
         Publish Vacancy
     </x-primary-button>

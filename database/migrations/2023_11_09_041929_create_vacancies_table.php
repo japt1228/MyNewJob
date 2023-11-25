@@ -18,10 +18,10 @@ return new class extends Migration
             $table->foreignId('company_id')->constrained()->nullOnDelete('cascade');
             $table->string('title');
             $table->text('description');
-            $table->text('requirement');
             $table->string('location');
             $table->date('postDate');
-            $table->integer('salary');
+            $table->foreignId('salary_id')->constrained()->nullOnDelete('cascade');
+            $table->foreignId('category_id')->constrained()->nullOnDelete('cascade');
             $table->string('typePosition');
             $table->timestamps();
         });
