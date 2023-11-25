@@ -21,6 +21,7 @@ Route::get('/', function () {
 
 Route::get('/dashboard', [VacancyController::class,'index'])->middleware(['auth', 'verified'])->name('Vacancies.index');
 Route::get('/Vacancies/create', [VacancyController::class,'create'])->middleware(['auth', 'verified'])->name('Vacancies.create');
+Route::get('/Vacancies/{vacancy}/edit', [VacancyController::class,'edit'])->middleware(['auth', 'verified'])->name('Vacancies.edit');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

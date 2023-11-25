@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Vacancy;
 use Illuminate\Http\Request;
 
 class VacancyController extends Controller
@@ -23,8 +24,10 @@ class VacancyController extends Controller
 
     }
 
-    public function edit($id){
-
+    public function edit(Vacancy $vacante){
+        return view('Vacancies.edit', [
+            'vacantes' => $vacante
+        ]);
     }
 
     public function delete(){
