@@ -16,12 +16,10 @@ class VacancyController extends Controller
         return view('Vacancies.create');
     }
 
-    public function store(){
-
-    }
-
-    public function show($id){
-
+    public function show(Vacancy $vacancy){
+        return view('Vacancies.show', [
+            'vacancy' => $vacancy
+        ]);
     }
 
     public function edit(Vacancy $vacancy){
